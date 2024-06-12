@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "884773953282",
+    "project_id": "deaf-and-mute",
+    "storage_bucket": "deaf-and-mute.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884773953282:android:50714ed944162c0249ec1b",
+        "android_client_info": {
+          "package_name": "com.example.deaf_mute_system"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2079B4JR68lVU6hdCf14in24Y3sZRhhQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

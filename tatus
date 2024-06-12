@@ -1,0 +1,83 @@
+[1mdiff --git a/lib/main.dart b/lib/main.dart[m
+[1mindex bfe170d..4102a63 100644[m
+[1m--- a/lib/main.dart[m
+[1m+++ b/lib/main.dart[m
+[36m@@ -52,7 +52,7 @@[m [mclass MyApp extends StatelessWidget {[m
+         ClerkScreen.routeName: (context) => ClerkScreen(),[m
+         FeedbackScreen.routeName: (context) => const FeedbackScreen(),[m
+       },[m
+[31m-      home: const SendReport(),[m
+[32m+[m[32m      home: const ReportScreen(),[m
+     );[m
+   }[m
+ }[m
+[1mdiff --git a/lib/report/report_chart.dart b/lib/report/report_chart.dart[m
+[1mindex 7017d28..e81afc1 100644[m
+[1m--- a/lib/report/report_chart.dart[m
+[1m+++ b/lib/report/report_chart.dart[m
+[36m@@ -4,14 +4,14 @@[m [mimport 'package:deaf_mute_system/report/show_report.dart';[m
+ import 'package:fl_chart/fl_chart.dart';[m
+ import 'package:flutter/material.dart';[m
+ [m
+[31m-class StatusPieChartPage extends StatefulWidget {[m
+[31m-  const StatusPieChartPage({Key? key}) : super(key: key);[m
+[32m+[m[32mclass ChartsPage extends StatefulWidget {[m[41m[m
+[32m+[m[32m  const ChartsPage({Key? key}) : super(key: key);[m[41m[m
+ [m
+   @override[m
+[31m-  _StatusPieChartPageState createState() => _StatusPieChartPageState();[m
+[32m+[m[32m  _ChartsPageState createState() => _ChartsPageState();[m[41m[m
+ }[m
+ [m
+[31m-class _StatusPieChartPageState extends State<StatusPieChartPage> {[m
+[32m+[m[32mclass _ChartsPageState extends State<ChartsPage> {[m[41m[m
+   int acceptedCount = 0;[m
+   int cancelledCount = 0;[m
+   DateTime selectedDate = DateTime.now();[m
+[1mdiff --git a/lib/report/send_report.dart b/lib/report/send_report.dart[m
+[1mindex c425619..16f6890 100644[m
+[1m--- a/lib/report/send_report.dart[m
+[1m+++ b/lib/report/send_report.dart[m
+[36m@@ -17,6 +17,7 @@[m [mclass _SendReportState extends State<SendReport> {[m
+   String? _selectedGender;[m
+   String? _status;[m
+   final TextEditingController _commentController = TextEditingController();[m
+[32m+[m[32m  final TextEditingController _descriptionController = TextEditingController();[m[41m[m
+   bool _isLoading = false;[m
+   @override[m
+   Widget build(BuildContext context) {[m
+[36m@@ -153,6 +154,14 @@[m [mclass _SendReportState extends State<SendReport> {[m
+               const SizedBox([m
+                 height: 20,[m
+               ),[m
+[32m+[m[32m              TextField([m[41m[m
+[32m+[m[32m                controller: _descriptionController,[m[41m[m
+[32m+[m[32m                decoration: const InputDecoration([m[41m[m
+[32m+[m[32m                    border: OutlineInputBorder(), labelText: 'Description'),[m[41m[m
+[32m+[m[32m              ),[m[41m[m
+[32m+[m[32m              const SizedBox([m[41m[m
+[32m+[m[32m                height: 20,[m[41m[m
+[32m+[m[32m              ),[m[41m[m
+               TextField([m
+                 controller: _commentController,[m
+                 decoration: const InputDecoration([m
+[36m@@ -189,6 +198,7 @@[m [mclass _SendReportState extends State<SendReport> {[m
+         _selectedName != null &&[m
+         _selectedGender != null &&[m
+         _status != null &&[m
+[32m+[m[32m        _descriptionController.text.trim().isNotEmpty &&[m[41m[m
+         _followerNameController.text.isNotEmpty) {[m
+       setState(() {[m
+         _isLoading = true;[m
+[36m@@ -203,8 +213,9 @@[m [mclass _SendReportState extends State<SendReport> {[m
+           'gender': _selectedGender,[m
+           'status': _status,[m
+           'followerName': _followerNameController.text,[m
+[32m+[m[32m          'description': _descriptionController.text,[m[41m[m
+           'comment':[m
+[31m-              _commentController.text.isEmpty ? null : _commentController.text,[m
+[32m+[m[32m              _commentController.text.isEmpty ? "nno " : _commentController.text,[m[41m[m
+         });[m
+ [m
+         // عرض رسالة نجاح الحفظ[m
+[36m@@ -217,6 +228,7 @@[m [mclass _SendReportState extends St
