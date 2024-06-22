@@ -314,7 +314,6 @@ class _ReportScreenState extends State<ReportScreen> {
         List<Map<String, dynamic>> reportData = querySnapshot.docs
             .map((doc) => {
                   "name": doc['name'],
-                  "gender": doc['gender'],
                   "selectQuery": doc['selectQuery'],
                   "followerName": doc['followerName'],
                   "date": (doc['date'] as Timestamp).toDate(),
@@ -592,8 +591,7 @@ class _ReportScreenState extends State<ReportScreen> {
               style: const pw.TextStyle(fontSize: 16)),
           pw.Text('Case Age: ${doc['age']}',
               style: const pw.TextStyle(fontSize: 16)),
-          pw.Text('Case Gender: ${doc['gender']}',
-              style: const pw.TextStyle(fontSize: 16)),
+        
           pw.Text('Case Date and Time: ${caseDate.toString()}',
               style: const pw.TextStyle(fontSize: 16)),
           pw.Divider(),

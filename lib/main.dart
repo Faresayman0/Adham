@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
         ClerkScreen.routeName: (context) => ClerkScreen(),
         FeedbackScreen.routeName: (context) => const FeedbackScreen(),
       },
-      home: const StatusPieChartPage(),
+      home: const ReportScreen(),
     );
   }
 }

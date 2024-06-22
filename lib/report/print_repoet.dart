@@ -29,10 +29,7 @@ class DisplayReportScreen extends StatelessWidget {
                     style: const TextStyle(fontSize: 18),
                   ),
                   const SizedBox(height: 10),
-                  Text(
-                    'Gender: ${data['gender']}',
-                    style: const TextStyle(fontSize: 18),
-                  ),
+               
                   const SizedBox(height: 10),
                   Text(
                     'Query: ${data['selectQuery']}',

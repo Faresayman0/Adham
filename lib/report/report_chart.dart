@@ -586,6 +586,22 @@ class _StatusPieChartPageState extends State<StatusPieChartPage> {
                     ],
                   ),
                 ),
+                RichText(
+                  text: const TextSpan(
+                    children: [
+                      WidgetSpan(
+                        child: Icon(Icons.circle, size: 14, color: Colors.grey),
+                      ),
+                      TextSpan(
+                        text: "Another Report",
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ],
@@ -600,4 +616,3 @@ class _StatusPieChartPageState extends State<StatusPieChartPage> {
     );
   }
 }
-
